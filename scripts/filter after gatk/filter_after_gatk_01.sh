@@ -12,25 +12,21 @@
 module purge
 module load gatk4/4.6
 
-# --- Define paths based on variant_03b_gather_vcfs.sh output ---
-# BASEDIR is now '/work/fauverlab/zachpella/outgroup_ixodes_all_preprocess_and_gatk'
-BASEDIR=/work/fauverlab/zachpella/outgroup_ixodes_all_preprocess_and_gatk
+# --- Define paths to match variant_03b_gather_vcfs.sh ---
+BASEDIR=/work/fauverlab/zachpella/scatter_100
 FINAL_VCF_DIR="${BASEDIR}/final_vcf"
 
-# INPUT_VCF is now 'combined_ixodes_all_variants.vcf.gz'
+# INPUT_VCF from the gather script output
 INPUT_VCF="${FINAL_VCF_DIR}/combined_ixodes_all_variants.vcf.gz"
 
-# New output name reflecting the new input file name
+# Output SNPs-only VCF
 OUTPUT_SNP_VCF="${FINAL_VCF_DIR}/combined_ixodes_all_variants_snps_only.vcf.gz"
 
-# NOTE: The gather script (variant_03b) explicitly creates the index,
-# so we can proceed directly to SelectVariants.
-
 echo "Starting SelectVariants to extract SNPs..."
+echo "Input VCF: ${INPUT_VCF}"
+echo "Output SNPs VCF: ${OUTPUT_SNP_VCF}"
 
-# Use -Xmx to match or slightly exceed the requested SBATCH --mem for the tool's heap size
-# We use the full 60G requested by SBATCH --mem for safety and performance.
-gatk --java-options "-Xms2G -Xmx80G" SelectVariants \
+gatk --java-options "-Xms2G -Xmx75G" SelectVariants \
     --variant "${INPUT_VCF}" \
     --select-type-to-include SNP \
     --output "${OUTPUT_SNP_VCF}"
@@ -40,4 +36,5 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "SelectVariants completed. SNPs-only VCF: ${OUTPUT_SNP_VCF}"
+echo "SelectVariants completed successfully."
+echo "SNPs-only VCF: ${OUTPUT_SNP_VCF}"
