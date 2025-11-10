@@ -9,7 +9,7 @@
 #SBATCH --partition=guest       
 
 ## --- USER-DEFINED PATHS ---
-BASEDIR="/work/fauverlab/zachpella/scatter_100"
+BASEDIR="/work/fauverlab/zachpella/scatter_20"
 INPUTDIR="${BASEDIR}/readgroups"
 WORKDIR="${BASEDIR}/dedup"
 SAMPLE_LIST="${BASEDIR}/sample_list.txt"
