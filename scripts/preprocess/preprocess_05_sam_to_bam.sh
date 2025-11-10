@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --job-name=sam_to_bam_array
 #SBATCH --time=4-00:00:00
-#SBATCH --output=%x_%j_%a.out  # Added %a for array job output
-#SBATCH --error=%x_%j_%a.err    # Added %a for array job errors
+#SBATCH --output=%x_%j_%a.out 
+#SBATCH --error=%x_%j_%a.err  
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=50G
-#SBATCH --array=1-9             # Must match the number of samples in your list
-#SBATCH --partition=guest       # Changed partition to 'guest'
+#SBATCH --array=1-9         
+#SBATCH --partition=guest      
 
 ## --- USER-DEFINED PATHS ---
 BASEDIR="/work/fauverlab/zachpella/scatter_100"
