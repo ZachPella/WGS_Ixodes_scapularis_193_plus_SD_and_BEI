@@ -5,11 +5,11 @@
 #SBATCH --error=%x_%j_%a.err
 #SBATCH --ntasks=1
 #SBATCH --mem=15G
-#SBATCH --cpus-per-task=4
+#SBATCH --ntasks-per-node=8
 #SBATCH --array=1-9
 #SBATCH --partition=guest
 
-BASEDIR="/work/fauverlab/zachpella/scatter_100"
+BASEDIR="/work/fauverlab/zachpella/scatter_20"
 READSDIR="${BASEDIR}/concatenated_reads"
 WORKDIR="${BASEDIR}/trimmed_reads"
 SAMPLE_LIST="${BASEDIR}/sample_list.txt"
@@ -58,7 +58,7 @@ fastp \
     -l 50 \
     -h "${SAMPLE}.fastp.html" \
     -j "${SAMPLE}.fastp.json" \
-    --thread 4
+    --thread 8
 
 # --- VERIFICATION ---
 if [[ -f "${WORKDIR}/${READS1_TRIMMED}" && -f "${WORKDIR}/${READS2_TRIMMED}" ]]; then
