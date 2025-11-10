@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=haplotype_scatter_combined
-#SBATCH --time=1-00:00:00        # 1 day
+#SBATCH --time=1-00:00:00        
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=20       # 20 chunks × 1 cpu/chunk
-#SBATCH --mem=200G               # Keeping at 300G for buffer
-#SBATCH --array=1-193            # Launch all 193 samples concurrently
+#SBATCH --cpus-per-task=20       
+#SBATCH --mem=200G              
+#SBATCH --array=1-193         
 #SBATCH --partition=guest
 
 ## Record relevant job info
@@ -19,7 +19,7 @@ echo "Run date: ${RUN_DATE}"
 printf "\n"
 
 ## Set directories and variables
-BASEDIR=/work/fauverlab/zachpella/scatter_100
+BASEDIR=/work/fauverlab/zachpella/scatter_20
 WORKDIR=${BASEDIR}/genotyping
 REFERENCEDIR=${BASEDIR}/reference
 REFERENCE=masked_ixodes_ref_genome.fasta
