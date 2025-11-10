@@ -10,7 +10,7 @@
 #SBATCH --partition=guest      
 
 ## --- USER-DEFINED PATHS ---
-BASEDIR="/work/fauverlab/zachpella/scatter_100"
+BASEDIR="/work/fauverlab/zachpella/scatter_20"
 SAMDIR="${BASEDIR}/sam_files"
 WORKDIR="${BASEDIR}/bam_files"
 REFERENCEDIR="${BASEDIR}/reference"
