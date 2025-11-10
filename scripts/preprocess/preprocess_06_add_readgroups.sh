@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --mem=35G
 #SBATCH --array=1-9
-#SBATCH --partition=guest       # Using 'guest' partition
+#SBATCH --partition=guest       
 
 ## --- USER-DEFINED PATHS ---
 BASEDIR="/work/fauverlab/zachpella/scatter_100"
@@ -52,7 +52,7 @@ fi
 
 ## Load modules
 module purge
-module load picard
+module load picard/3.0
 module load samtools/1.20
 
 # --- MAIN PROCESSING (Picard AddOrReplaceReadGroups) ---
