@@ -10,9 +10,9 @@
 #SBATCH --partition=guest
 
 # Set directories
-BASE_DIR="/work/fauverlab/zachpella/scatter_100/SD_and_BEI_2025_fasta"
-OUTPUT_DIR="/work/fauverlab/zachpella/scatter_100/concatenated_reads"
-SAMPLE_LIST="/work/fauverlab/zachpella/scatter_100/sample_list.txt"
+BASE_DIR="/work/fauverlab/zachpella/scatter_20/SD_and_BEI_2025_fasta"
+OUTPUT_DIR="/work/fauverlab/zachpella/scatter_20/concatenated_reads"
+SAMPLE_LIST="/work/fauverlab/zachpella/scatter_20/sample_list.txt"
 
 # Create output directory
 mkdir -p ${OUTPUT_DIR}
