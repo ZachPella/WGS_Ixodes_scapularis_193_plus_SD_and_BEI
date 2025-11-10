@@ -7,11 +7,11 @@
 #SBATCH --error=gatk4_genomicsdbimport.%J.err
 #SBATCH --output=gatk4_genomicsdbimport.%J.out
 #SBATCH --partition=guest
-#SBATCH --array=0-19              # Changed from 0-9 to 0-99 for 100 chunks
+#SBATCH --array=0-19          
 #SBATCH --cpus-per-task=2
 
 module purge
-module load gatk4/4.3
+module load gatk4/4.6
 
 export TILEDB_DISABLE_FILE_LOCKING=1
 
@@ -26,7 +26,7 @@ printf "\n"
 
 ## Set working directory and variables
 # NOTE: Updated BASEDIR to match scatter_100
-BASEDIR=/work/fauverlab/zachpella/scatter_100
+BASEDIR=/work/fauverlab/zachpella/scatter_20
 WORKDIR=${BASEDIR}/genotyping
 REFERENCEDIR=${BASEDIR}/reference
 REFERENCE=masked_ixodes_ref_genome.fasta
