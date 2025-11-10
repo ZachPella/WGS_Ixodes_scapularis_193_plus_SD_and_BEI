@@ -9,13 +9,9 @@
 #SBATCH --partition=guest       
 
 ## --- USER-DEFINED PATHS ---
-# Main project directory
 BASEDIR="/work/fauverlab/zachpella/scatter_100"
-# Directory containing the BAM files with Read Groups (Input from previous script)
 INPUTDIR="${BASEDIR}/readgroups"
-# Output directory for deduplicated BAM files and metrics
 WORKDIR="${BASEDIR}/dedup"
-# Path to the sample list file
 SAMPLE_LIST="${BASEDIR}/sample_list.txt"
 
 # Create working directory if it doesn't exist
