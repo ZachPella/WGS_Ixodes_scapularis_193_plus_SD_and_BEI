@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=mark_dups_array
 #SBATCH --time=22:00:00
-#SBATCH --output=%x_%j_%a.out  # Array job output
-#SBATCH --error=%x_%j_%a.err    # Array job errors
+#SBATCH --output=%x_%j_%a.out  
+#SBATCH --error=%x_%j_%a.err    
 #SBATCH --nodes=1
 #SBATCH --mem=120G
-#SBATCH --array=1-9             # Must match the number of samples in your list
-#SBATCH --partition=guest       # Changed partition to 'guest'
+#SBATCH --array=1-9            
+#SBATCH --partition=guest       
 
 ## --- USER-DEFINED PATHS ---
 # Main project directory
@@ -57,9 +57,8 @@ fi
 
 ## Load modules
 module purge
-module load picard
-# Samtools is not strictly needed here but often useful, keeping it loaded for convenience.
-module load samtools/1.19
+module load picard/3.0
+module load samtools/1.20
 
 # --- MAIN PROCESSING (Picard MarkDuplicates) ---
 
