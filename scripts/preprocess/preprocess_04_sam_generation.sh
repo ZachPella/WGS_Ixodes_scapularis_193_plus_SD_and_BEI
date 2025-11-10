@@ -4,7 +4,7 @@
 #SBATCH --output=%x_%j_%a.out  # Added %a for array job output
 #SBATCH --error=%x_%j_%a.err    # Added %a for array job errors
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=4
+#SBATCH --ntasks-per-node=16
 #SBATCH --mem=60G
 #SBATCH --array=1-9             # Must match the number of samples in your list
 #SBATCH --partition=guest       # Changed partition to 'guest'
@@ -68,7 +68,7 @@ module load bwa/0.7
 echo "Running BWA MEM alignment..."
 # BWA output is directed straight to the SAM file in the WORKDIR
 bwa mem \
-    -t 4 \
+    -t 16 \
     -M \
     "${REFERENCEDIR}/${REFERENCE}" \
     "${READSDIR}/${READS1_TRIMMED}" "${READSDIR}/${READS2_TRIMMED}" \
