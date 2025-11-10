@@ -17,7 +17,7 @@ module load gatk4/4.6
 START_DIR=$(pwd)
 
 # --- Updated to match scatter_100 structure ---
-BASEDIR=/work/fauverlab/zachpella/scatter_100
+BASEDIR=/work/fauverlab/zachpella/scatter_20
 WORKDIR=${BASEDIR}/genotyping
 REFERENCEDIR=${BASEDIR}/reference
 REFERENCE=masked_ixodes_ref_genome.fasta
