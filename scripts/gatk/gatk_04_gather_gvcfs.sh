@@ -14,7 +14,7 @@ module purge
 module load gatk4/4.6
 
 # --- CORRECTED to match variant_03_genotype_gvcfs.sh ---
-BASEDIR=/work/fauverlab/zachpella/scatter_100
+BASEDIR=/work/fauverlab/zachpella/scatter_20
 WORKDIR=${BASEDIR}/genotyping
 
 # Directory containing the scattered VCF chunks
