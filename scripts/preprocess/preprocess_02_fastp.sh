@@ -47,7 +47,7 @@ if [ ! -f "${READSDIR}/${READS1}" ] || [ ! -f "${READSDIR}/${READS2}" ]; then
 fi
 
 module purge
-module load fastp
+module load fastp/0.23
 
 cd "${WORKDIR}"
 fastp \
