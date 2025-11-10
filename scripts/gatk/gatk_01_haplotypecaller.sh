@@ -5,8 +5,8 @@
 #SBATCH --error=%x_%j.err
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=20       
-#SBATCH --mem=200G              
-#SBATCH --array=1-193         
+#SBATCH --mem=90G
+#SBATCH --array=1-9           
 #SBATCH --partition=guest
 
 ## Record relevant job info
@@ -19,7 +19,7 @@ echo "Run date: ${RUN_DATE}"
 printf "\n"
 
 ## Set directories and variables
-BASEDIR=/work/fauverlab/zachpella/scatter_20
+BASEDIR=/work/fauverlab/zachpella/scatter_100
 WORKDIR=${BASEDIR}/genotyping
 REFERENCEDIR=${BASEDIR}/reference
 REFERENCE=masked_ixodes_ref_genome.fasta
