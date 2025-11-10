@@ -19,7 +19,7 @@ echo "Run date: ${RUN_DATE}"
 printf "\n"
 
 ## Set directories and variables
-BASEDIR=/work/fauverlab/zachpella/scatter_100
+BASEDIR=/work/fauverlab/zachpella/scatter_20
 WORKDIR=${BASEDIR}/genotyping
 REFERENCEDIR=${BASEDIR}/reference
 REFERENCE=masked_ixodes_ref_genome.fasta
