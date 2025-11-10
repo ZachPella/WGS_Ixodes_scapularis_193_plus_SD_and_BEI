@@ -13,7 +13,7 @@ module purge
 module load gatk4/4.6
 
 # --- Define paths to match variant_03b_gather_vcfs.sh ---
-BASEDIR=/work/fauverlab/zachpella/scatter_100
+BASEDIR=/work/fauverlab/zachpella/scatter_20
 FINAL_VCF_DIR="${BASEDIR}/final_vcf"
 
 # INPUT_VCF from the gather script output
